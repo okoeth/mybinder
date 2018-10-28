@@ -15,3 +15,5 @@ RUN adduser --disabled-password \
     ${NB_USER}
 WORKDIR ${HOME}
 
+ADD requirements.txt .
+
