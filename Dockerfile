@@ -5,6 +5,9 @@ FROM jupyter/scipy-notebook:610bb8b938db
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook
 
-ADD requirements.txt .
+RUN mkdir snap
+ADD * ./snap/
+WORKDIR $HOME/snap
+RUN ls
 RUN pip install -r requirements.txt
-
+WORKDIR $HOME
